@@ -1,9 +1,10 @@
 import './Header.css';
+import React from 'react';
 
 export default function Header(props){
     return(
         <header className='header'>
-            Cabeçalho
+            <h2>{props.title}</h2>
         </header>
     )
 }

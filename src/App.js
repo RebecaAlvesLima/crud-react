@@ -9,7 +9,9 @@ function App() {
     <div className="App">
       <Logo />
       <Menu />
-      <Main />
+      <Main title="Bem Vindos">
+          <div>Carros, disponíveis e alugados</div>
+      </Main>
       <Footer />
     </div>
   );
