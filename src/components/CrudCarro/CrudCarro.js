@@ -21,17 +21,14 @@ export default class CrudCarro extends Component{
                         <th className="tabTituloAno">Ano</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                {Carros[0].placa}
-                            </td>
-                            <td>
-                                {Carros[0].modelo}
-                            </td>
-                            <td>
-                                {Carros[0].ano}
-                            </td>
-                        </tr>
+                        {Carros.map(
+                            (carro)=>
+                            <tr key={carro.id}>
+                                <td>{carro.placa}</td>
+                                <td>{carro.modelo}</td>
+                                <td>{carro.ano}</td>
+                            </tr>
+                        )}
                     </tbody>
                 </table>
             </div>
