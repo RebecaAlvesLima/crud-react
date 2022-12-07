@@ -16,13 +16,29 @@ const initialState= {
 
 ]*/
 
+const user = JSON.parse(localStorage.getItem("user"));
+
+
 export default class CrudCarro extends Component{
     state={...initialState}
     componentDidMount(){
-        axios(urlApi).then(resp =>{
+        /*axios(urlApi).then(resp =>{
             this.setState({lista:resp.data})
-        })
+        })*/
+        axios(urlAPI, { headers: { Authorization: 'Bearer ' + user.token } }).then(resp => {
+            this.setState( { lista_carro: resp.data } );
+        },
+    (error) => {
+        const _mens =
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+        error.message ||
+        error.toString();
+        this.setState( { mens: _mens });
     }
+  );
+}
     limpar(){
         this.setState({carro:initialState.carro})
     }
