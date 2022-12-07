@@ -15,16 +15,16 @@ const login = (username, senha) => {
             return response.data;
         });
     };
-     const logout = () => {
+const logout = () => {
     localStorage.removeItem("user");
-    };
+};
 
-    const getCurrentUser = () => {
-        return JSON.parse(localStorage.getItem("user"));
-    };
-    const AuthService = {
-            login,
-            logout,
-            getCurrentUser,
+const getCurrentUser = () => {
+    return JSON.parse(localStorage.getItem("user"));
+};
+const AuthService = {
+        login,
+        logout,
+        getCurrentUser,
         };
         export default AuthService;
